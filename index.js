@@ -6,7 +6,7 @@ const question_generators = {
 function vietsyll() {
     let p = document.createElement("p");
 
-    let rimes = ["a!", "e!", "ê!", "i!", "o!", "ô!", "ơ!", "u!", "ư!", "y!", "o!a", "o!e", "uê!", "u!ơ", "u!y", "i!a", "u!a", "ư!a", "uy!a", "o!i", "ô!i", "ơ!i", "u!i", "ư!i", "oa!i", "uô!i", "ươ!i", "a!o", "e!o", "oa!o", "oe!o", "a!u", "â!u", "ê!u", "i!u", "ư!u", "iê!u", "uy!u", "ươ!u", "yê!u", "a!y", "â!y", "oa!y", "uâ!y", "a!m", "ă!m", "â!m", "e!m", "ê!m", "i!m", "o!m", "ô!m", "u!m", "ư!m", "iê!m", "oa!m", "oă!m", "oe!m", "uô!m", "ươ!m", "yê!m", "a!n", "ă!n", "â!n", "e!n", "ê!n", "i!n", "o!n", "ô!n", "ơ!n", "u!n", "ư!n", "iê!n", "oa!n", "oă!n", "oe!n", "uâ!n", "uô!n", "uy!n", "ươ!n", "uyê!n", "yê!n", "an!g", "ăn!g", "ân!g", "en!g", "on!g", "ôn!g", "un!g", "ưn!g", "iê!ng", "oa!ng", "oă!ng", "oo!ng", "uâ!ng", "uô!ng", "ươ!ng", "yê!ng", "a!nh", "ê!nh", "i!nh", "o!anh", "uê!nh", "uy!nh", "a!ch", "ê!ch", "i!ch", "oa!ch", "uê!ch", "uy!ch", "a!c", "ă!c", "â!c", "e!c", "o!c", "ô!c", "u!c", "ư!c", "iê!c", "oa!c", "oă!c", "oo!c", "uô!c", "ươ!c", "a!t", "ă!t", "â!t", "e!t", "ê!t", "i!t", "o!t", "ô!t", "ơ!t", "u!t", "ư!t", "iê!t", "oa!t", "oă!t", "oe!t", "uâ!t", "uô!t", "uy!t", "ươ!t", "uyê!t", "yê!t", "a!p", "ă!p", "â!p", "e!p", "ê!p", "i!p", "o!p", "ô!p", "ơ!p", "u!p", "iê!p", "oa!p", "uô!p", "uy!p", "ươ!p"];
+    let rimes = ["a!", "e!", "ê!", "i!", "o!", "ô!", "ơ!", "u!", "ư!", "y!", "o!a", "o!e", "uê!", "u!ơ", "u!y", "i!a", "u!a", "ư!a", "uy!a", "o!i", "ô!i", "ơ!i", "u!i", "ư!i", "oa!i", "uô!i", "ươ!i", "a!o", "e!o", "oa!o", "oe!o", "a!u", "â!u", "ê!u", "i!u", "ư!u", "iê!u", "uy!u", "ươ!u", "yê!u", "a!y", "â!y", "oa!y", "uâ!y", "a!m", "ă!m", "â!m", "e!m", "ê!m", "i!m", "o!m", "ô!m", "u!m", "ư!m", "iê!m", "oa!m", "oă!m", "oe!m", "uô!m", "ươ!m", "yê!m", "a!n", "ă!n", "â!n", "e!n", "ê!n", "i!n", "o!n", "ô!n", "ơ!n", "u!n", "ư!n", "iê!n", "oa!n", "oă!n", "oe!n", "uâ!n", "uô!n", "uy!n", "ươ!n", "uyê!n", "yê!n", "a!ng", "ă!ng", "â!ng", "e!ng", "o!ng", "ô!ng", "u!ng", "ư!ng", "iê!ng", "oa!ng", "oă!ng", "oo!ng", "uâ!ng", "uô!ng", "ươ!ng", "yê!ng", "a!nh", "ê!nh", "i!nh", "o!anh", "uê!nh", "uy!nh", "a!ch", "ê!ch", "i!ch", "oa!ch", "uê!ch", "uy!ch", "a!c", "ă!c", "â!c", "e!c", "o!c", "ô!c", "u!c", "ư!c", "iê!c", "oa!c", "oă!c", "oo!c", "uô!c", "ươ!c", "a!t", "ă!t", "â!t", "e!t", "ê!t", "i!t", "o!t", "ô!t", "ơ!t", "u!t", "ư!t", "iê!t", "oa!t", "oă!t", "oe!t", "uâ!t", "uô!t", "uy!t", "ươ!t", "uyê!t", "yê!t", "a!p", "ă!p", "â!p", "e!p", "ê!p", "i!p", "o!p", "ô!p", "ơ!p", "u!p", "iê!p", "oa!p", "uô!p", "uy!p", "ươ!p"];
     let start_consonants = ["b", "d", "đ", "h", "l","m", "n", "p", "r", "s", "t", "v", "x", "tr", "th", "ch", "ph", "nh", "kh", "gi", "qu", "g", "ng", "c"];
     let nang = "\u0323";
     let sac = "\u0301";
@@ -72,34 +72,30 @@ function create_show_word_button() {
     return button;
 }
 
-function choose_word() {
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function choose_word() {
     let question = question_generators[document.getElementById("questionset").value]();
-    clear_display()
-    setTimeout(show_word(question), 200);
-}
+    let questiontime = document.getElementById("questiontime").value;
 
-function show_word(question) {
-    return function() {
+    clear_display();
+    await delay(200);
+    set_display_contents(question);
+    await delay(questiontime);
+    clear_display();
+    await delay(200);
+
+    let show_answer_button = document.createElement("button");
+    show_answer_button.type = "button"
+    show_answer_button.innerHTML = "Show Answer";
+    show_answer_button.onclick = function() {
         set_display_contents(question);
-
-        let questiontime = document.getElementById("questiontime").value;
-
-        setTimeout(ask_answer(question), questiontime);
+        question_contents.insertBefore(create_show_word_button(), null);
     };
-}
 
-function ask_answer(question) {
-    return function() {
-        let button = document.createElement("button");
-        button.type = "button"
-        button.innerHTML = "Show Answer";
-        button.onclick = function() {
-            set_display_contents(question);
-            question_contents.insertBefore(create_show_word_button(), null);
-        };
-
-        set_display_contents(button);
-    };
+    set_display_contents(show_answer_button);
 }
 
 set_display_contents(create_show_word_button());
