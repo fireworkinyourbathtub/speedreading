@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Speed Reading</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <style>
             html, body {
@@ -16,6 +17,11 @@
 
             #questionsettings {
                 flex-grow: 0;
+
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                gap: 1em;
             }
             #questiondisplay {
                 flex-grow: 1;
@@ -29,14 +35,18 @@
     </head>
     <body>
         <div id="questionsettings">
-            <label for="questionset">Set:</label>
-            <select name="questionset" id="questionset">
-                <!-- <option value="englishwordset">English Word</option> -->
-                <option value="vietsyll">Vietnamese Syllable</option>
-            </select>
+            <div class="paddiv">
+                <label for="questionset">Set:</label>
+                <select name="questionset" id="questionset">
+                    <!-- <option value="englishwordset">English Word</option> -->
+                    <option value="vietsyll">Vietnamese Syllable</option>
+                </select>
+            </div>
 
-            <label for="questiontime">Time:</label>
-            <input type="number" name="questiontime" id="questiontime" min="10" value="100">
+            <div class="paddiv">
+                <label for="questiontime">Time:</label>
+                <input type="number" name="questiontime" id="questiontime" min="10" value="100">
+            </div>
         </div>
 
         <div id="questiondisplay">
