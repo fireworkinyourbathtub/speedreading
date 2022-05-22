@@ -1,4 +1,4 @@
-const question_contents = document.getElementById("questioncontents");
+const question_display = document.getElementById("questiondisplay");
 const question_generators = {
     "vietsyll": vietsyll,
 };
@@ -53,14 +53,14 @@ function vietsyll() {
 }
 
 function clear_display() {
-    while (question_contents.firstChild) {
-        question_contents.removeChild(question_contents.firstChild);
+    while (question_display.firstChild) {
+        question_display.removeChild(question_display.firstChild);
     }
 }
 
 function set_display_contents(el) {
     clear_display();
-    question_contents.insertBefore(el, null);
+    question_display.insertBefore(el, null);
 }
 
 function create_show_word_button() {
@@ -92,7 +92,7 @@ async function choose_word() {
     show_answer_button.innerHTML = "Show Answer";
     show_answer_button.onclick = function() {
         set_display_contents(question);
-        question_contents.insertBefore(create_show_word_button(), null);
+        question_display.insertBefore(create_show_word_button(), null);
     };
 
     set_display_contents(show_answer_button);
