@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Speed Reading</title>
+
+        <style>
+            .hidden {
+                display: none;
+            }
+            
+            .center {
+                text-align: center;
+            }
+
+            .vcenter {
+                margin: auto;
+            }
+
+            html, body, #questiondisplay {
+                height: 100%;
+            }
+
+            #questiondisplay {
+                display: flex;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="center">
+            <label for="questionset">Set:</label>
+            <select name="questionset" id="questionset">
+                <!-- <option value="englishwordset">English Word</option> -->
+                <option value="vietsyllset">Vietnamese Syllable</option>
+            </select>
+
+            <label for="questiontime">Time:</label>
+            <input type="number" name="questiontime" id="questiontime" min="10" value="100">
+        </div>
+
+        <div id="questiondisplay" class="center">
+            <div id="questioncontents" class="center vcenter">
+            </div>
+        </div>
+
+        <div class="hidden" id="vietsyllset" class="center">
+            <p>a</p>
+            <p>b</p>
+        </div>
+
+        <script src="./index.js"></script>
+    </body>
+</html>
